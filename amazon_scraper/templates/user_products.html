@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1 class="mb-4">Your Saved Products</h1>
+    {% if products.total == 0 %}
+          <h3 class="mb-4">Looks a little empty...</h3>
+          <a class="btn btn-info" href="{{ url_for('main.searchHome') }}">Search for products</a>
+        {% else %}
+          {% for product in products.items %}
+            <article class="media content-section">
+              <a href="{{url_for('products.user_product', asin=product.asin)}}"><img class="article-img " src="{{ product.image }}"></a>
+              <div class="media-body">
+                <h5><a class="article-title" href="{{ url_for('products.user_product', asin=product.asin) }}">{{ product.name }}</a></h5>
+                <h5 class="font-weight-bold mb-3">{{ product.price }}</h5>
+                <p class="text-muted mb-1">{{ product.stars }}</p>
+                <p class="text-muted mb-1">{{ product.ratings }}</p>
+              </div>
+            </article>
+          {% endfor %}  
+        {% endif %}
+{% endblock content %}
