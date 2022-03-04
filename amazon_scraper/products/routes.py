@@ -4,43 +4,54 @@ from amazon_scraper import db
 from amazon_scraper.models import User, Product
 from amazon_scraper.functions.product import extractProduct, transformProduct
 
-products = Blueprint('products', __name__)
+products = Blueprint("products", __name__)
 
-@products.route("/product/<string:asin>", methods=['GET', 'POST'])
+
+@products.route("/product/<string:asin>", methods=["GET", "POST"])
 def product(asin):
     soup = extractProduct(asin)
     product = transformProduct(soup)
-    print(product.get('asin'))
-    if request.method == 'POST':
-        savedProduct = Product(asin=product.get('asin'), image=product.get('image'), name=product.get('name'), price=product.get('price'), stars=product.get('stars'), ratings=product.get('ratings'), author=current_user)
+    print(product.get("asin"))
+    if request.method == "POST":
+        savedProduct = Product(
+            asin=product.get("asin"),
+            image=product.get("image"),
+            name=product.get("name"),
+            price=product.get("price"),
+            stars=product.get("stars"),
+            ratings=product.get("ratings"),
+            author=current_user,
+        )
         db.session.add(savedProduct)
         db.session.commit()
-        flash('Your product has been saved!', 'success')
-        return redirect(url_for('products.user_products'))
-    return render_template('product.html', product=product, title='Product')
+        flash("Your product has been saved!", "success")
+        return redirect(url_for("products.user_products"))
+    return render_template("product.html", product=product, title="Product")
 
 
 @products.route("/user/products")
 def user_products():
     email = current_user.email
-    page = request.args.get('page', 1, type=int)
-    user = User.query.filter_by(email=email).first_or_404()  
-    products = Product.query.filter_by(author=user).paginate(page = page) 
-    return render_template('user_products.html', products=products, user=user)
+    page = request.args.get("page", 1, type=int)
+    user = User.query.filter_by(email=email).first_or_404()
+    products = Product.query.filter_by(author=user).paginate(page=page)
+    return render_template("user_products.html", products=products, user=user)
 
-@products.route("/user/product/<string:asin>", methods=['GET', 'POST'])
+
+@products.route("/user/product/<string:asin>", methods=["GET", "POST"])
 def user_product(asin):
-    product= Product.query.filter_by(asin=asin).first_or_404()
-    if request.method == 'POST':
+    product = Product.query.filter_by(asin=asin).first_or_404()
+    if request.method == "POST":
         deletedProduct = product
         if product.author != current_user:
             abort(403)
         db.session.delete(deletedProduct)
         db.session.commit()
-        flash('Your product has been removed!', 'success')
-        return redirect(url_for('products.user_products'))
-    return render_template('user_product.html', product=product, title='Product')
-        
+        flash("Your product has been removed!", "success")
+        return redirect(url_for("products.user_products"))
+    return render_template("user_product.html", product=product, title="Product")
+
+
 # @products.route("/post/new", methods=['GET', 'POST'])
 # @login_required
 # def new_post():

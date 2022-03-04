@@ -11,9 +11,9 @@ bcrypt = Bcrypt()
 
 mail = Mail()
 
-login_manager= LoginManager()
-login_manager.login_view = 'users.login'
-login_manager.login_message_category = 'info'
+login_manager = LoginManager()
+login_manager.login_view = "users.login"
+login_manager.login_message_category = "info"
 
 
 def create_app(config_class=Config):
@@ -29,6 +29,7 @@ def create_app(config_class=Config):
     from amazon_scraper.products.routes import products
     from amazon_scraper.main.routes import main
     from amazon_scraper.errors.handlers import errors
+
     app.register_blueprint(users)
     app.register_blueprint(products)
     app.register_blueprint(main)
