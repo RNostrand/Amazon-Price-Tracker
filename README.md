@@ -46,13 +46,14 @@ Amazon Price Tracker is a web application written in Python and Flask which enab
 <summary>Screenshots</summary>
 <br>
 
-> **[?]**
-> Please provide your screenshots here.
 
 |                               Home Page                               |                               Login Page                               |
 | :-------------------------------------------------------------------: | :--------------------------------------------------------------------: |
-| <img src="docs/images/screenshot.png" title="Home Page" width="100%"> | <img src="docs/images/screenshot.png" title="Login Page" width="100%"> |
+| <img src="docs/images/Welcome.png" title="Home Page" width="100%"> | <img src="docs/images/Register.png" title="Login Page" width="100%"> |
 
+|                               Search Page                               |                               Item Page                               |
+| :-------------------------------------------------------------------: | :--------------------------------------------------------------------: |
+| <img src="docs/images/Search.png" title="Search Page" width="100%"> | <img src="docs/images/Item.png" title="Item Page" width="100%"> |
 </details>
 
 ### Built With
