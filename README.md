@@ -34,7 +34,6 @@
 - [Authors & contributors](#authors--contributors)
 - [Security](#security)
 - [License](#license)
-- [Acknowledgements](#acknowledgements)
 
 </details>
 
@@ -69,7 +68,7 @@ To run this project locally, please follow these  steps:
 
 1. Download this repo: `git clone https://github.com/RNostrand/Wildfire-Lookup.git`
 2. Enter the repo folder: `cd Amazon-Price-Tracker`
-3. Install the project requirments: `pip install -r requirments.txt`
+3. Install the project requirments: `pip install -r requirements.txt`
 4. Reference `.example-env` to create your own `.env` file. View the table below for descriptions of the variables.
 5. Start the application: `python run.py`
 
@@ -106,10 +105,7 @@ To run this project locally, please follow these  steps:
 </details>
 
 ## Usage
-
-> **[?]**
-> How does one go about using it?
-> Provide various use cases and code examples here.
+Users can register an account with an email and a password. Search for products and add them to your tracking list. When the price changes for an item, you will recieve an email notication alerting you of the change. 
 
 ## Roadmap
 
@@ -120,22 +116,16 @@ See the [open issues](https://github.com/RNostrand/Amazon-Price-Tracker/issues) 
 - [Newest Bugs](https://github.com/RNostrand/Amazon-Price-Tracker/issues?q=is%3Aopen+is%3Aissue+label%3Abug)
 
 ## Support
-
-> **[?]**
-> Provide additional ways to contact the project maintainer/maintainers.
-
 Reach out to the maintainer at one of the following places:
 
 - [GitHub issues](https://github.com/RNostrand/Amazon-Price-Tracker/issues/new?assignees=&labels=question&template=04_SUPPORT_QUESTION.md&title=support%3A+)
 - Contact options listed on [this GitHub profile](https://github.com/RNostrand)
 
-## Project assistance
+## Project Assistance
 
 If you want to say **thank you** or/and support active development of Amazon Price Tracker:
 
 - Add a [GitHub Star](https://github.com/RNostrand/Amazon-Price-Tracker) to the project.
-- Tweet about the Amazon Price Tracker.
-- Write interesting articles about the project on [Dev.to](https://dev.to/), [Medium](https://medium.com/) or your personal blog.
 
 Together, we can make Amazon Price Tracker **better**!
 
@@ -164,9 +154,3 @@ _For more information and to report security issues, please refer to our [securi
 This project is licensed under the **MIT license**.
 
 See [LICENSE](LICENSE) for more information.
-
-## Acknowledgements
-
-> **[?]**
-> If your work was funded by any organization or institution, acknowledge their support here.
-> In addition, if your work relies on other software libraries, or was inspired by looking at other work, it is appropriate to acknowledge this intellectual debt too.

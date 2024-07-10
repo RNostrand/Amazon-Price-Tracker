@@ -5,10 +5,6 @@ Please note we have a [code of conduct](CODE_OF_CONDUCT.md), please follow it in
 
 ## Development environment setup
 
-> **[?]**
-> Proceed to describe how to setup local development environment.
-> e.g:
-
 To set up a development environment, please follow these steps:
 
 1. Clone the repo
@@ -17,7 +13,7 @@ To set up a development environment, please follow these steps:
    git clone https://github.com/RNostrand/Amazon-Price-Tracker
    ```
 
-2. TODO
+2. Follow the Installation Instructions
 
 ## Issues and feature requests
 
